@@ -1,0 +1,51 @@
+slides > slide.title-slide p {
+  color: black;
+}
+
+slides > slide.title-slide hgroup h2 {  
+  color: black;
+  font-size: 30px;
+  letter-spacing: 10;
+}
+ul {
+  display: block;
+  font-size: 25px;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  #  font-weight: bold;
+  color: black;
+}
+
+/* Pretty print */
+  
+  /* line 600, ../scss/default.scss */
+  .prettyprint .com {
+    /* a comment */
+      color: green;
+    font-style: italic;
+	font-size: 20px;
+  }
+
+/* line 604, ../scss/default.scss */
+  .prettyprint .lit {
+    /* a literal value */
+      color: black;
+	  font-size: 25px;
+  }
+
+/* line 609, ../scss/default.scss */
+  .prettyprint .pun,
+.prettyprint .opn,
+.prettyprint .clo {
+  color: red;
+  font-size: 25px;
+}
+
+/* line 618, ../scss/default.scss */
+  .prettyprint .pln {
+    color: blue;
+	font-size: 25px;
+  }
+
