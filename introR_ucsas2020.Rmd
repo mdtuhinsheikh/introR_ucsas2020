@@ -22,32 +22,32 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 ## Getting Started
-- The source codes and necessary documentations are available at the repository: (https://github.com/mdtuhinsheikh/introR_ucsas2019).
-- The workshop slides are available at the [link](https://github.com/mdtuhinsheikh/R_Intro_UCSAS2019).
+- This workshop is a part of the [UConn Sports Analytics Symposium 2020](https://statds.org/events/ucsas2020/workshops.html).
+- The source codes and necessary documentations are available at the repository: (https://github.com/mdtuhinsheikh/introR_ucsas2020).
+- The workshop slides are available at the [link](https://mdtuhinsheikh.github.io/introR_ucsas2020/).
 - Prerequisites: 
   + [R](https://cran.r-project.org/) and [Rstudio](https://www.rstudio.com/products/rstudio/download/#download) have been installed.
 
 ## About Me
-- Third year Ph.D. Student in Statistics, UConn.
-- Research Interests:
-  + Bayesian biostatistics
-  + Modelling informative dropout process
-  + Machine learning and deep learning
-  + Microbiome data analysis
-- Future goals: 
-  + Contribute to the broader field of biostatistics and statistical learning.
+- Fourth year Ph.D. Student in Statistics, UConn.
+- **Research Interests:**
+  + Competing risks, longitudinal data, and cure rate modelling.
+  + Bayesian statistics, co-data analysis, and model assessment.
+  + Deep learning in survival data.
+  + Interim data and microbiome data analysis.
+- **Future goals:**
+  + Contribute to the broader field of biostatistics through methodological developments.
+- **Personal Website:** [link](https://www.isrt.ac.bd/people/tsheikh/).
 
-## Assumption about the audience
-- Have little to no experience with R.
+## Workshop Pre-requisits
+- Have little to NO experience with R.
 - Enthusiastic attitude towards learning R programming.
-  
-## Aims of the Workshop
-- By the end of this workshop, the participants should have a basic understanding of
-  + What R can do and whether you want to use it in the future
-  + The ecosystem of R programming
-  + Data structure and basic R functions
-  + Import, export, and data management using R
 
+## Aims of the Workshop
+<center>
+![](./Figures/aims.png)
+</center>
+  
 ## Outline
 - R Basics
 - File System and Data Structure
@@ -65,18 +65,14 @@ knitr::opts_chunk$set(echo = FALSE)
   + Initial of the names of two originators: Ross Ihaka and Robert Gentleman
 - More details: <https://www.r-project.org>.
 
-## Why R?
-- R is completely free to use and is an open source
-- R is compatible with major operating systems (e.g. Windows, macOS, Linux).
-- R has a huge library of user-contributed packages with
-  + frequent release and
-  + active development
-- R is flexible to use
-- Popular in academia and industry
-- R makes data analysis fun!
+## Why Learn R?
+<center>
+![](./Figures/whyR.png)
+</center>
 
-## Coupling R with RStudio
-- RStudio is an integrated development environment for the R programming language.
+
+## IDE for R
+- **RStudio** is an integrated development environment (IDE) for the R programming language.
 - Let us introduce with the RStudio interface.
 
 ## RStudio interface
@@ -93,15 +89,15 @@ log(2)                       # 0.6931472
 ```
 
 ## Ask for help?
-- If you know the exact name of the function, then try **`?function_name`**, e.g.,\
+- **`?function_name`**, e.g.,\
 ```{r echo = TRUE, eval = FALSE}
 ?mean                       # Search mean function
 ```
-- If you know specific words then **`help.search("text")`**, e.g.,\
+- **`help.search("text")`**, e.g.,\
 ```{r echo = TRUE, eval = FALSE}
 help.search("print") 
 ```
-- If you do not know the exact function names, **Google** search engine or **Stack Overflow** are always excellent resources.
+- **Google** search engine or **Stack Overflow** are always excellent resources.
 
 
 ## Assigning operator
@@ -138,7 +134,7 @@ seq(), seq.int(), seq_len(), seq.along(), %in%, match(), rev(), head(),
 tail(), paste(), paste0(), typeof(), is.character(), as.character(), 
 is.numeric(), as.numeric(), is.logical(), as.logical(), ...
 ```
-- **Quiz:** Let us try `?rep` to get to know about this function and then use this function to print {1 2 3 1 2 3} and {1 1 2 2 3 3}.
+- **Quiz:** Let us try **`?rep`** to get to know about this function and then use this function to print {1 2 3 1 2 3} and {1 1 2 2 3 3}.
 
 ```{r echo = TRUE, eval = FALSE}
 rep(c(1, 2, 3), times = 2)                 # 1 2 3 1 2 3
@@ -307,7 +303,16 @@ while(i <= 5){
 |$x \geq 5$   |  x >= 5               |
 
 ## Loop and condition cont...
-- When we want to control how the program should work, we use **if** statement.
+- For decision making **if ... else** statement is used.
+```{r echo=TRUE, eval=FALSE}
+if (condition 1) {
+  statement 1
+} else {
+  statement 2
+}
+```
+- An example of **"for"** and **"if"** statements
+
 ```{r echo = TRUE, eval = FALSE}
 for(i in 1:5){
   if(i != 2){
@@ -316,7 +321,7 @@ for(i in 1:5){
   }
 }
 ```
-- Loop and conditioning can always be significant component of a R function.
+
 
 ## Quiz 
 - Is matrix multiplication $AB$ possible? Use the same $A = \begin{bmatrix} 1 & 2 \\ 3 & 4  \end{bmatrix}$ and $B = \begin{bmatrix} 10 & 20 \\ 30 & 40  \end{bmatrix}$. Write an R program using **if** condition. 
@@ -380,7 +385,7 @@ read.csv(), read.csv2(), write.csv(), write.csv2(), etc.
 ```{r echo = TRUE, eval = FALSE}
 data("dataName", package = "package_name")
 ```
-- Quiz: Read "Batting" data from "Lahman" package
+- **Quiz:** Read "Batting" data from "Lahman" package
 
 ## Read data from package cont...
 ```{r echo = TRUE, eval = FALSE}
@@ -389,7 +394,7 @@ data("Batting", package = "Lahman")
 ```
 - To learn about the variables
 ```{r echo = TRUE, eval = FALSE}
-str("Batting")
+str(Batting)
 #'data.frame':	105861 obs. of  22 variables:
 # $ playerID: chr  "abercda01" "addybo01" "allisar01" "allisdo01" ...
 # $ yearID  : int  1871 1871 1871 1871 1871 1871 1871 1871 1871 ...
@@ -418,7 +423,7 @@ head(Batting)
 # 6 armstbo01   1871     1    FW1   NA 12  49  9 11   2   1  0   5 ...
 ```
 
-## Basics of dataframe using Batting data
+## Basics of dataframe 
 - Indexing works similar to matrix
 ```{r echo = TRUE, eval = FALSE}
 Batting[, 1:4]
@@ -432,7 +437,7 @@ Batting[, 1:4]
 # ...
 ```
 
-## Basics of dataframe using Batting data cont...
+## Basics of dataframe cont...
 - We can also display or work with variable(s) by using **\$** or mentioning the name of variable inside the indexing.
 ```{r echo = TRUE, eval = FALSE}
 Batting$playerID
@@ -442,7 +447,7 @@ Batting[1:10, c("playerID", "yearID")]
 # Displayes 10 rows of playerID and yearID variables
 ```
 
-## Basics of dataframe using Batting data cont...
+## Basics of dataframe cont...
 - Create new variable
 ```{r echo = TRUE, eval = FALSE}
 Batting$CS_SO <- with(Batting, CS + SO)
